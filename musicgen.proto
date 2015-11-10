@@ -1,0 +1,30 @@
+package Entertain.Musics;
+
+// Music
+message Music {
+
+    // Music Genre
+    message Genre {
+        required string name = 1;
+
+        // Music Genre Title
+        message Title {
+            required string title = 1;
+        }
+
+        optional Address address = 2;
+        repeated string singer = 3;               // The models sold here.
+    } // tutup message genre
+
+    required  string  singer  = 1;                 // Model name
+    required  Genre  genre = 2;                 // Genre information
+
+
+
+    // Music Singer
+    message Singer {
+        optional  string          name = 1;
+        required  string          feat  = 2;
+        optional  Genre.Title  title    = 3;
+    }
+}
